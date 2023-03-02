@@ -18,8 +18,8 @@ hue_img = cv.merge([img_h, img_s, img_v])
 hue_img = cv.cvtColor(hue_img, cv.COLOR_HSV2BGR)
 
 #Lager en hue-maske, og prøver å isolere små hull med rektangler. Fungerer for rektangler, men dårlig for alt annet. 
-lower_range = np.array([120,100,100])
-upper_range = np.array([140,255,255])
+lower_range = np.array([170,100,100])
+upper_range = np.array([180,255,255])
 mask = cv.inRange(image_hsv, lower_range, upper_range)
 kernel = np.ones((23,23), np.uint8)
 filtered_mask = cv.morphologyEx(mask, cv.MORPH_CLOSE, kernel)
