@@ -24,7 +24,7 @@ class Find_color:
         mask = cv.inRange(self.image_hsv, lower_range, upper_range)
         kernel = np.ones((23,23), np.uint8)
         filtered_mask = cv.morphologyEx(mask, cv.MORPH_CLOSE, kernel)
-        return mask
+        return filtered_mask
 
     
 
@@ -45,6 +45,7 @@ class Find_color:
             # Tegner den største contouren i hvit, og lager et stort grønt rektangel på det største objektet.
             cv.drawContours(output, c, -1, (255,255,255), 2)
             cv.rectangle(self.image, (x, y), (x+w,y+h),(0,255,0),2)
+        
         self.result = np.hstack([self.image, output])
         return self.result
     
@@ -67,6 +68,8 @@ bilde.showCountours(80,90)
 
 
 #Trykk på en knapp, og så utføres linjene under
+cv.waitKey(0)
+bilde.showCountours(170,180)
 cv.waitKey(0)
 
 bilde.saveResult('done_result.jpg')
