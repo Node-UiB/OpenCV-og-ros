@@ -15,4 +15,7 @@ cv.VideoCapture().read() - returns wheter the frame has been read, and the frame
 
 .shape - gives the size of an array.
 
-cv.resize(img, dimensions, interpolation=cv.INTER_AREA) - resize the image 
+cv.resize(img, dimensions, interpolation=cv.INTER_AREA) - resize the image with interpolation. For more info on the process visit:
+                                                        - https://en.wikipedia.org/wiki/Interpolation and https://en.wikipedia.org/wiki/Motion_interpolation
+
+

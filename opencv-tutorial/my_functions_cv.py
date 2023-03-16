@@ -33,5 +33,26 @@ class Cv_functions():
         #If you get an error: (-215:Assertion failed), then the video ran out of frames, and can not find more frames.
         #It raises a cv2.error: , so it can break out of the loop.
         #This is the same error as when a wrong path to a video or picture is stated. 
+    
+    def rescaleFrame(frame, scale = 1):
+        width = int(frame.shape[1] * scale)
+        height = int(frame.shape[1] * scale)
+        dimensions = (width, height)
+
+        return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
+    
+    def display_RESI_Vid(self, vid_path = ''):
+        capture = cv.VideoCapture(vid_path)
+
+        while True:
+            isTrue, frame = capture.read()
+            cv.imshow('video', frame)
+
+            if cv.waitKey(20) == ord('d'):
+                break
+
+        capture.release()
+        cv.destroyAllWindows()
+        
 
     
