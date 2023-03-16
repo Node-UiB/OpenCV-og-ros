@@ -1,0 +1,23 @@
+
+cv.imread(img) - reads the image to an array.
+
+cv.imshow('name', img) - creates a window with the name 'name', and displays the img in said window.
+
+cv.waitKey(int) - waits a delay specified with an int. It returns -1 if the delay has elapsed or the int unicode rep of the key. 'd' = int(100)
+                - paired with == ord(key), it will do something when you pressed the right key. It returns something every time a key is pressed.
+
+cv.destroyAllWindows() - need i say more?
+
+cv.VideoCapture() - Takes either int for webcam. 0 is the default main webcam. Or it takes a path to a video.
+                  - This is a class instance that has numerous of methods.
+
+cv.VideoCapture().read() - returns wheter the frame has been read, and the frame in the same form cv.imread(img) does.
+
+.shape - gives the size of an array.
+
+cv.resize(img, dimensions, interpolation=cv.INTER_AREA) - resize the image with interpolation. For more info on the process visit:
+                                                        - https://en.wikipedia.org/wiki/Interpolation and https://en.wikipedia.org/wiki/Motion_interpolation
+
+.
+
+
